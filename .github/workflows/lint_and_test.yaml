@@ -18,15 +18,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.10'
-    - name: Install package
-      run: |
-        python -m pip install --upgrade pip
-        rm -rf dist
-        python setup.py sdist
-        pip install dist/*.tar.gz
     - name: Install dependencies for testing
       run: |
-        pip install -r requirements-dev.txt
+        pip install -r requirements.txt
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
